@@ -12,6 +12,8 @@
 		BFABCD22201A289500450632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFABCD20201A289500450632 /* Main.storyboard */; };
 		BFABCD24201A289500450632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFABCD23201A289500450632 /* Assets.xcassets */; };
 		BFABCD27201A289500450632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFABCD25201A289500450632 /* LaunchScreen.storyboard */; };
+		BFABCD40201A2D6400450632 /* Array+Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFABCD3F201A2D6400450632 /* Array+Sample.swift */; };
+		BFABCD42201A2D7000450632 /* Array+SampleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFABCD41201A2D7000450632 /* Array+SampleTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		BFABCD28201A289500450632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFABCD35201A28CB00450632 /* StdLibExtensionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StdLibExtensionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFABCD39201A28CB00450632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFABCD3F201A2D6400450632 /* Array+Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Sample.swift"; sourceTree = "<group>"; };
+		BFABCD41201A2D7000450632 /* Array+SampleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SampleTest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		BFABCD2E201A28A100450632 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				BFABCD3F201A2D6400450632 /* Array+Sample.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		BFABCD36201A28CB00450632 /* StdLibExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				BFABCD41201A2D7000450632 /* Array+SampleTest.swift */,
 				BFABCD39201A28CB00450632 /* Info.plist */,
 			);
 			path = StdLibExtensionsTests;
@@ -155,6 +161,7 @@
 					};
 					BFABCD34201A28CB00450632 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BFABCD18201A289500450632;
 					};
@@ -205,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFABCD1F201A289500450632 /* ViewController.swift in Sources */,
+				BFABCD40201A2D6400450632 /* Array+Sample.swift in Sources */,
 				BFABCD1D201A289500450632 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFABCD42201A2D7000450632 /* Array+SampleTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,11 +394,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StdLibExtensionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.ralfebert.StdLibExtensionsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StdLibExtensions.app/StdLibExtensions";
@@ -400,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StdLibExtensionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
