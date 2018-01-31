@@ -25,8 +25,13 @@ class ArraySampleTest: XCTestCase {
         let shuffled = numbers.shuffled
         XCTAssertEqual(numbers.count, Set(shuffled).count)
         XCTAssertNotEqual(numbers, shuffled)
-        print("sample:", sample)
-        print("shuffled:", shuffled)
+    }
+    
+    func testExample() {
+        let numbers = Array(1...49)
+        print("single random element: ", numbers.sample!)
+        print("multiple random elements: ", numbers.sample(6))
+        print("array in random order: ", numbers.shuffled)
     }
 
 }

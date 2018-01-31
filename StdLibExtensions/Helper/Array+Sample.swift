@@ -1,4 +1,5 @@
 // Copyright 2018, Ralf Ebert
+// Source    https://www.ralfebert.de/ios-examples/swift/array-random-sample/
 // License   https://opensource.org/licenses/MIT
 // License   https://creativecommons.org/publicdomain/zero/1.0/
 
