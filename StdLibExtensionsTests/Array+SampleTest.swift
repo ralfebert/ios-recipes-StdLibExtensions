@@ -28,10 +28,59 @@ class ArraySampleTest: XCTestCase {
     }
     
     func testExample() {
-        let numbers = Array(1...49)
-        print("single random element: ", numbers.sample!)
-        print("multiple random elements: ", numbers.sample(6))
-        print("array in random order: ", numbers.shuffled)
+        let range = 1...49
+        print("single random element: ", range.sample!)
+        print("multiple random elements: ", range.sample(6))
+
+        let names = ["Alice", "Bob", "Carol", "Dave", "Eve", "Frank", "Grace", "Heidi"]
+        print("single random element: ", names.sample!)
+        print("multiple random elements: ", names.sample(3))
+        print("array in random order: ", names.shuffled)
+
+        let set = Set(names)
+        print("single random element: ", set.sample!)
+        print("multiple random elements: ", set.sample(3))
+
+    }
+    
+    func testClosedRangeSample() {
+        let range = -3...3
+        let allValues = Set(range)
+        var sampledValues = Set<Int>()
+        (1...10000).forEach { (_) in
+            sampledValues.insert(range.sample!)
+        }
+        XCTAssertEqual(allValues, sampledValues)
+    }
+    
+    func testOpenRangeSample() {
+        let range = 0..<5
+        let allValues = Set(range)
+        var sampledValues = Set<Int>()
+        (1...10000).forEach { (_) in
+            sampledValues.insert(range.sample!)
+        }
+        XCTAssertEqual(allValues, sampledValues)
+    }
+    
+    func testSliceSample() {
+        let allValues = ["Alice", "Bob", "Carol", "Dave", "Eve", "Frank", "Grace", "Heidi"]
+        let slice = allValues[1...3]
+        let sliceValues = Set(slice)
+        var sampledValues = Set<String>()
+        (1...10000).forEach { (_) in
+            sampledValues.insert(slice.sample!)
+        }
+        XCTAssertEqual(sliceValues, sampledValues)
     }
 
+    func testSetSample() {
+        let allValues = Set(["Bob", "Alice", "Carol"])
+        var sampledValues = Set<String>()
+        (1...10000).forEach { (_) in
+            sampledValues.insert(allValues.sample!)
+        }
+        XCTAssertEqual(allValues, sampledValues)
+    }
+    
 }
